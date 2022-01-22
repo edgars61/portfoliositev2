@@ -1,7 +1,21 @@
   
    window.addEventListener("load", function(){
+        let time = new Date();
+        let hour = time.getHours();
+        let greeting = "";
+        if (hour<12){
+           greeting ="Good morning 🌄";
+        }
+        else if (hour <17){
+           greeting = "Good afternoon 🌞";
+        }
+        else{
+           greeting ="Good evening 🌆";
+        }
    	  document.querySelector(".preloader").classList.add("opacity-0");
         document.body.classList.add("dark");
+        
+        document.querySelector(".greeting").innerHTML = greeting;
 
    	  setTimeout(function(){
          document.querySelector(".preloader").style.display="none";
@@ -10,7 +24,6 @@
 
 
  
-
 
  // Aside Navbar
     const nav=document.querySelector(".nav"),
